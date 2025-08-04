@@ -1,34 +1,164 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+.App {
+  font-family: 'Inter', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.font-inter {
+  font-family: 'Inter', sans-serif;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Aurora Background Animation */
+.aurora-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.App-link {
-    color: #61dafb;
+.aurora-layer {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(58, 134, 255, 0.1) 50%, transparent 70%);
+  animation: aurora-move 20s ease-in-out infinite;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.aurora-layer-1 {
+  background: linear-gradient(45deg, transparent 20%, rgba(58, 134, 255, 0.15) 50%, transparent 80%);
+  animation-duration: 25s;
+  animation-delay: 0s;
+}
+
+.aurora-layer-2 {
+  background: linear-gradient(-45deg, transparent 30%, rgba(199, 36, 177, 0.1) 50%, transparent 70%);
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+
+.aurora-layer-3 {
+  background: linear-gradient(135deg, transparent 40%, rgba(58, 134, 255, 0.08) 50%, transparent 60%);
+  animation-duration: 35s;
+  animation-delay: -20s;
+}
+
+@keyframes aurora-move {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -60%) rotate(1deg);
+  }
+  50% {
+    transform: translate(-40%, -50%) rotate(-1deg);
+  }
+  75% {
+    transform: translate(-60%, -40%) rotate(0.5deg);
+  }
+}
+
+/* Glass Effects */
+.glass-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-input {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(58, 134, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(58, 134, 255, 0.5);
+}
+
+/* Custom animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(58, 134, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(58, 134, 255, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3A86FF, #C724B1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions */
+* {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focus states */
+input:focus, 
+textarea:focus, 
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.3);
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 20px rgba(58, 134, 255, 0.4);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(199, 36, 177, 0.4);
 }
