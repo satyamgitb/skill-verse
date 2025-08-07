@@ -20,7 +20,9 @@ import {
   Brain,
   CheckCircle,
   Loader2,
-  SkipForward
+  SkipForward,
+  User,
+  Zap
 } from "lucide-react";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
