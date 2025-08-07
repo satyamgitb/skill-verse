@@ -30,9 +30,9 @@ const DashboardLayout = () => {
     },
     { 
       icon: Code2, 
-      label: "Interview", 
-      path: "/dashboard/interview/1",
-      description: "Coding Practice"
+      label: "AI Interview", 
+      path: "/dashboard/start-interview",
+      description: "AI-Powered Practice"
     },
     { 
       icon: MessageSquare, 
